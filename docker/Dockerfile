@@ -8,7 +8,7 @@ ENV TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0+PTX"
 ENV TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
 ENV CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
 
-RUN apt-get update && apt-get install -y git ninja-build libglib2.0-0 libsm6 libxrender-dev libxext6 ffmpeg \
+RUN apt-get update && apt-get install --no-install-recommends -y git ninja-build libglib2.0-0 libsm6 libxrender-dev libxext6 ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* 
 
@@ -17,7 +17,14 @@ RUN conda clean --all
 RUN git clone https://github.com/crazyhathello/r3det_piglet-tracking.git /r3det_piglet_tracking
 WORKDIR /r3det_piglet_tracking
 ENV FORCE_CUDA="1"
-RUN pip install cython --no-cache-dir
-RUN pip install torchinfo
-RUN pip install "git+https://github.com/open-mmlab/cocoapi.git#subdirectory=pycocotools"
-RUN pip install --no-cache-dir -e .
+RUN pip install cython --no-cache-dir &&\
+    pip install torchinfo &&\
+    pip install "git+https://github.com/open-mmlab/cocoapi.git#subdirectory=pycocotools" &&\
+    pip install --no-cache-dir -e .
+
+RUN python setup.py install
+
+# RUN pip install cython --no-cache-dir
+# RUN pip install torchinfo
+# RUN pip install "git+https://github.com/open-mmlab/cocoapi.git#subdirectory=pycocotools"
+# RUN pip install --no-cache-dir -e .

@@ -13,7 +13,7 @@ from torchinfo import summary
 # from torchsummary import summary
 # from pytorch_modelsize import SizeEstimator
 
-out_dir = "/r3det_piglet_detection/result_image/"
+out_dir = "/r3det_piglet_tracking/result_image/"
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Visualize result with tile-cropped images')
