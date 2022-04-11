@@ -13,7 +13,7 @@ from torchinfo import summary
 # from torchsummary import summary
 # from pytorch_modelsize import SizeEstimator
 
-out_dir = "/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/result_image/"
+out_dir = "/r3det_piglet_detection/result_image/"
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Visualize result with tile-cropped images')
@@ -36,8 +36,9 @@ def main():
     dataset = build_dataset(cfg.data.test)
     data_loader = build_dataloader(
         dataset,
-        samples_per_gpu=1,
-        workers_per_gpu=cfg.data.workers_per_gpu,
+        samples_per_gpu=8,
+        workers_per_gpu=0,
+#cfg.data.workers_per_gpu,
         dist=False,
         shuffle=False)
 

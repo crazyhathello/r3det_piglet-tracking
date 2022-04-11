@@ -2,14 +2,14 @@
 # dataset_type = 'DOTADatasetV1'
 dataset_type = 'PIGLETDataset'
 # dataset root path:
-data_root = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/'
-trainsplit_ann_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/trainsplit/labelTxt'
-trainsplit_img_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/trainsplit/images'
-valsplit_ann_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/valsplit/labelTxt'
-valsplit_img_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/valsplit/images'
-val_ann_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/val/labelTxt'
-val_img_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/val/images'
-test_img_folder = '/home/nas/Research_Group/Personal/Kim/piglet/r3det_test/data/test/images'
+data_root = '/r3det_piglet_detection/data/'
+trainsplit_ann_folder = '/r3det_piglet_detection/data/trainsplit/labelTxt'
+trainsplit_img_folder = '/r3det_piglet_detection/data/trainsplit/images'
+valsplit_ann_folder = '/r3det_piglet_detection/data/valsplit/labelTxt'
+valsplit_img_folder = '/r3det_piglet_detection/data/valsplit/images'
+val_ann_folder = '/r3det_piglet_detection/data/val/labelTxt'
+val_img_folder = '/r3det_piglet_detection/data/val/images'
+test_img_folder = '/r3det_piglet_detection/data/test/images'
 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
