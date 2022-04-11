@@ -36,8 +36,8 @@ def main():
     dataset = build_dataset(cfg.data.test)
     data_loader = build_dataloader(
         dataset,
-        samples_per_gpu=8,
-        workers_per_gpu=0,
+        samples_per_gpu=1,
+        workers_per_gpu=4,
 #cfg.data.workers_per_gpu,
         dist=False,
         shuffle=False)

@@ -14,10 +14,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y git ninja-build
 
 # Install r3det-on-mmdetection
 RUN conda clean --all
-# RUN git clone https://github.com/crazyhathello/r3det_piglet-tracking.git /r3det_piglet_tracking
-ADD https://api.github.com/repos/crazyhathello/r3det_piglet_tracking/git/refs/heads/master version.json
-RUN git clone -b master https://github.com/crazyhathello/r3det_piglet-tracking.git /r3det_piglet_tracking
+
+ARG CACHE_DATE=2022-04-11
+RUN git clone https://github.com/crazyhathello/r3det_piglet-tracking.git /r3det_piglet_tracking
 WORKDIR /r3det_piglet_tracking
+
 ENV FORCE_CUDA="1"
 RUN pip install cython --no-cache-dir &&\
     pip install torchinfo &&\
