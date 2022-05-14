@@ -36,7 +36,7 @@ RUN pip install cython --no-cache-dir &&\
     pip install --no-cache-dir -e .
 
 RUN python setup.py install
-python3 tools/test_dev_0418.py configs/r3det/r3det_r50_fpn_2x_CustomizeImageSplit.py --format-only --fuse-conv-bn --options submission_dir=/coordinates
+
 CMD ["python3", "tools/start_inference.py", "configs/r3det/r3det_r50_fpn_2x_CustomizeImageSplit.py", "--format-only", "--fuse-conv-bn", "--options", "submission_dir=/coordinates"]
 # RUN pip install cython --no-cache-dir
 # RUN pip install torchinfo
