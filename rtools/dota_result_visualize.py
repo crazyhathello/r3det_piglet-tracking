@@ -37,7 +37,7 @@ def main():
     data_loader = build_dataloader(
         dataset,
         samples_per_gpu=1,
-        workers_per_gpu=4,
+        workers_per_gpu=0,
 #cfg.data.workers_per_gpu,
         dist=False,
         shuffle=False)
